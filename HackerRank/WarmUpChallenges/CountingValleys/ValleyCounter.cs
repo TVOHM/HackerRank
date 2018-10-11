@@ -8,13 +8,13 @@ namespace HackerRank.WarmUpChallenges.CountingValleys
         private const char Down = 'D';
         private const int SeaLevel = 0;
 
-        public int CountValleys()
+        public long CountValleys()
         {
             int numSteps = Convert.ToInt32(Console.ReadLine());
             string path = Console.ReadLine();
 
-            int level = SeaLevel;
-            int valleyCount = 0;
+            long level = SeaLevel;
+            long valleyCount = 0;
 
             foreach(char step in path)
             {
@@ -24,6 +24,7 @@ namespace HackerRank.WarmUpChallenges.CountingValleys
                 }
                 else if (step == Down)
                 {
+                    // If we've moved down from sea level, we've stepped into a new valley.
                     if (level == SeaLevel)
                     {
                         valleyCount++;

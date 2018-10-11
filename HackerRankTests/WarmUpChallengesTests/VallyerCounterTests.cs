@@ -14,11 +14,11 @@ namespace HackerRankTests.WarmUpChallengesTests
     {
         [TestMethod]
         [DataRow("UDDDUDUU", 1)]
-        public void CorrectlyCountsNumberOfValleys(string input, int expectedValleyCount)
+        public void CorrectlyCountsNumberOfValleys(string input, long expectedValleyCount)
         {
             using (new ConsoleInputs(input.Length, input))
             {
-                int valleyCount = new ValleyCounter().CountValleys();
+                long valleyCount = new ValleyCounter().CountValleys();
                 Assert.AreEqual(expectedValleyCount, valleyCount);
             }
         }

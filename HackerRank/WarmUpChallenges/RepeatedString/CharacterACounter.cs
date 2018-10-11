@@ -1,7 +1,8 @@
 ﻿using System;
-using System.IO;
+using System.Collections.Generic;
+using System.Text;
 
-namespace HackerRankConsoleApp
+namespace HackerRank.WarmUpChallenges.RepeatedString
 {
     public class CharacterACounter
     {
@@ -50,20 +51,6 @@ namespace HackerRankConsoleApp
             }
 
             return characterACount;
-        }
-    }
-
-    class Program
-    {
-        private const string OutputPathName = "OUTPUT_PATH";
-
-        static void Main(string[] args)
-        {
-            using (var output = new StreamWriter(Environment.GetEnvironmentVariable(OutputPathName), true))
-            {
-                var result = new CharacterACounter().CountCharacterA();
-                output.WriteLine(result);
-            }
         }
     }
 }
