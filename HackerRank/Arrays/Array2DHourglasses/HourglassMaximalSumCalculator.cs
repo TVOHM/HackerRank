@@ -1,8 +1,9 @@
 ﻿using System;
-using System.IO;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
-namespace HackerRankConsoleApp
+namespace HackerRank.Arrays.Array2DHourglasses
 {
     public class HourglassMaximalSumCalculator
     {
@@ -15,7 +16,7 @@ namespace HackerRankConsoleApp
 
             long? maximalSum = null;
             // Go over every starting position of all possible hourglasses (top left position).
-            for (int column = 0; column <= ArrayDimensions - HourglassDimensions; column++)
+            for(int column = 0; column <= ArrayDimensions - HourglassDimensions; column++)
             {
                 for (int row = 0; row <= ArrayDimensions - HourglassDimensions; row++)
                 {
@@ -37,25 +38,11 @@ namespace HackerRankConsoleApp
         long GetRowSum(long[][] grid, int column, int row)
         {
             long sum = 0;
-            for (int i = 0; i < HourglassDimensions; i++)
+            for(int i = 0; i < HourglassDimensions; i++)
             {
                 sum += grid[row][column + i];
             }
             return sum;
-        }
-    }
-
-    class Program
-    {
-        private const string OutputPathName = "OUTPUT_PATH";
-
-        static void Main(string[] args)
-        {
-            using (var output = new StreamWriter(Environment.GetEnvironmentVariable(OutputPathName), true))
-            {
-                var result = new HourglassMaximalSumCalculator().CalculateHourglassMaximalSum();
-                output.WriteLine(result);
-            }
         }
     }
 }
